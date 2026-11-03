@@ -1,4 +1,5 @@
 <div class="container">
+
     <div class="card shadow mb-4">
         <div class="card-body">
 
@@ -18,10 +19,7 @@
 
                 @for (produit of produits;
                     track produit.idProduit;
-                    let index = $index;
-                    let nbr = $count;
-                    let first = $first;
-                    let last = $last) {
+                    let index = $index) {
 
                     <tbody>
                         <tr>
@@ -32,14 +30,14 @@
                             <td>{{ produit.dateCreation | date:'dd/MM/yyyy' }}</td>
 
                             <td>
-                                <a class="btn btn-danger"
+                                <button type="button" class="btn btn-danger"
                                    (click)="supprimerProduit(produit)">
                                     Supprimer
-                                </a>
+                                </button>
                             </td>
 
                             <td>
-                                <a class="btn btn-success"
+                                <a role="button" class="btn btn-success"
                                    [routerLink]="['/updateProduit', produit.idProduit]">
                                     Modifier
                                 </a>
